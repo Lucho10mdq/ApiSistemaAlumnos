@@ -98,8 +98,19 @@ class AlumnoController extends Controller
         $alumno->nombre=$request->nombre;
         $alumno->promedio=$request->promedio;
         $alumno->save();
-        
+
        
         echo "guarde";
+    }
+
+    public function EliminarAlumno($id)
+    {
+        $alumno=Alumno::find($id);
+        if($alumno){
+             $alumno->delete();
+            return response()->json(['msg' => 'Se elimino correctamente']);    
+        }          
+         else    
+            return response()->json(['msg' => 'No existe alumno']);   
     }
 }
