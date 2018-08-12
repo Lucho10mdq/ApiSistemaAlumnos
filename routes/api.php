@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('api')->post('/agregar','AlumnoController@agregarAlumno');
 Route::middleware('api')->get('/apiJson','AlumnoController@DevolverTodosJson');
-Route::middleware('api')->post('/eliminarAlumno/{id}','AlumnoController@EliminarAlumno');
+Route::middleware('api')->delete('/eliminarAlumno/{id}','AlumnoController@EliminarAlumno');
